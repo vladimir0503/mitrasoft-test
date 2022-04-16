@@ -5,7 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Gallery from "./components/pages/Gallery";
+import Gallery from "./components/pages/Galery/Gallery";
 import AboutMe from "./components/pages/AboutMe";
 import ImgPage from "./components/pages/ImgPage";
 
