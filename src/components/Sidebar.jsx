@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Offcanvas, Image, Container, Card, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Navbar, Offcanvas, Image, Card, Nav } from 'react-bootstrap';
 import avatar from '../images/avatar.jpg'
 
 const Sidebar = () => {
@@ -34,8 +35,8 @@ const Sidebar = () => {
                     </Card.Body>
                 </Card>
                 <Nav>
-                    <Nav.Link href="#action1">Галерея</Nav.Link>
-                    <Nav.Link href="#action2">Обо мне</Nav.Link>
+                    <Link to='/'>Галерея</Link>
+                    <Link to='/aboutMe'>Обо мне</Link>
                 </Nav>
             </Offcanvas.Body>
         </Navbar.Offcanvas>
