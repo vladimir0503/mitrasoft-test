@@ -25,7 +25,7 @@ const ImgPage = () => {
 
   return (
     <Container>
-      <h1 className='mb-4'>Информация</h1>
+      <h1 className='mb-4'>Подробности о картинке</h1>
       {loading
         ? <Spinner animation="border" />
         : <Card className='flex-row'>
@@ -33,6 +33,7 @@ const ImgPage = () => {
           <Card.Body>
             <div className='mb-3'>
               <h3>{imageInfo.title}</h3>
+              <p>ID: {imageInfo.id}</p>
               <a href={imageInfo.url}>{imageInfo.url}</a>
             </div>
             <Button onClick={goHome}>Назад</Button>

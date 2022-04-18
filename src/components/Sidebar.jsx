@@ -9,7 +9,7 @@ const Sidebar = ({ show, onClose }) => {
             show={show} onHide={onClose}
         >
             <Offcanvas.Header closeButton>
-                <Offcanvas.Title id="offcanvasNavbarLabel">
+                <Offcanvas.Title>
                     <Image
                         src={avatar}
                         roundedCircle
@@ -33,8 +33,8 @@ const Sidebar = ({ show, onClose }) => {
                     </Card.Body>
                 </Card>
                 <Nav>
-                    <Link onClick={onClose} to='/'>Галерея</Link>
-                    <Link onClick={onClose} to='/aboutMe'>Обо мне</Link>
+                    <Link className='fs-5' onClick={onClose} to='/'>Галерея</Link>
+                    <Link className='fs-5' onClick={onClose} to='/aboutMe'>Обо мне</Link>
                 </Nav>
             </Offcanvas.Body>
         </Offcanvas>
