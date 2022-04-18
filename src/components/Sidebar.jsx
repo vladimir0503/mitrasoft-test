@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import { Navbar, Offcanvas, Image, Card, Nav } from 'react-bootstrap';
 import avatar from '../images/avatar.jpg'
 
-const Sidebar = () => {
+const Sidebar = ({ show, onClose }) => {
     return (
-        <Navbar.Offcanvas
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-            placement="start"
+        <Offcanvas
+            show={show} onHide={onClose}
         >
             <Offcanvas.Header closeButton>
                 <Offcanvas.Title id="offcanvasNavbarLabel">
@@ -35,11 +33,11 @@ const Sidebar = () => {
                     </Card.Body>
                 </Card>
                 <Nav>
-                    <Link to='/'>Галерея</Link>
-                    <Link to='/aboutMe'>Обо мне</Link>
+                    <Link onClick={onClose} to='/'>Галерея</Link>
+                    <Link onClick={onClose} to='/aboutMe'>Обо мне</Link>
                 </Nav>
             </Offcanvas.Body>
-        </Navbar.Offcanvas>
+        </Offcanvas>
     );
 };
 
