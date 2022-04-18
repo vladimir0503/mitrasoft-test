@@ -1,9 +1,6 @@
-import { getImages } from '../api/api';
-import { put, call } from 'redux-saga/effects'
-
-const LOAD_IMAGES = 'LOAD_IMAGES';
-const LOAD_IMAGE_INFO = 'LOAD_IMAGE_INFO';
-const TOGGLE_LOADER = 'TOGGLE_LOADER';
+export const LOAD_IMAGES = 'LOAD_IMAGES';
+export const LOAD_IMAGE_INFO = 'LOAD_IMAGE_INFO';
+export const TOGGLE_LOADER = 'TOGGLE_LOADER';
 
 const initialState = {
     images: [],
@@ -42,19 +39,5 @@ export const imagesReducer = (state = initialState, action) => {
 
         default:
             break;
-    };
-};
-
-const delay = () => new Promise(resolve => setTimeout(resolve, 500));
-
-export function* uploadImages() {
-    try {
-        yield put({ type: TOGGLE_LOADER, payload: true });
-        const data = yield call(getImages);
-        yield put({ type: LOAD_IMAGES, payload: data.data });
-        yield call(delay);
-        yield put({ type: TOGGLE_LOADER, payload: false });
-    } catch (error) {
-        console.log(error);
     };
 };

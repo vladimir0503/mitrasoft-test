@@ -1,11 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Image, Button } from 'react-bootstrap';
 
 const Item = ({ url, id }) => {
   const [hideBtn, setHide] = React.useState(true);
 
+  const navigate = useNavigate();
+
   const goToImgPage = () => {
-    console.log(id);
+    navigate(`/image/${id}`);
   };
 
   return (
